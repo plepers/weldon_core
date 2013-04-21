@@ -2,8 +2,10 @@
 
 Chaplin = require 'chaplin'
 routes = require './routes'
+config = require 'core_config'
 
-
+# init handlebars helpers
+require './view-helper'
 
 class Application extends Chaplin.Application
 
@@ -30,24 +32,12 @@ class Application extends Chaplin.Application
     Chaplin.mediator.seal()
 
 
-app = null
-
-config =
-  controllerSuffix: '/controller',
-  controllerPath: ''
-  domModelContainer : document.getElementById '_skeleton'
-
-running = false
-
-_run = ( cfg )->
-
-  return if running
-  config = cfg
-  app = new Application()
-  app.initialize()
+app = new Application()
+app.initialize()
 
 module.exports =
-  run : _run
+  app : app,
+  config : config
 
 
 

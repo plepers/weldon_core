@@ -6,4 +6,5 @@ styles/main.css
 core/main.js
 ----------------
 core/routes.js
+core/view-helper.js
 core/main.js

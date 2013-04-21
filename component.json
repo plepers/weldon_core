@@ -8,7 +8,7 @@
     "backbone": "https://github.com/plepers/backbone.git#1.0.0",
     "requirejs": "2.1.x",
     "almond": "0.2.x",
-    "chaplin": "0.8.x",
+    "chaplin": "https://github.com/plepers/chaplin.git",
     "handlebars": "1.0.x",
     "bootstrap": "2.2.x",
     "jquery-pjax": "1.6.x"

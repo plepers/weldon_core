@@ -205,6 +205,7 @@ module.exports = (grunt) ->
           modules : [
             {
               name : "#{pkg.name}/main"
+              insertRequire: ["#{pkg.name}/main"]
               exclude: [
                 'chaplin'
                 'handlebars'
@@ -213,7 +214,7 @@ module.exports = (grunt) ->
               ]
             }
           ]
-          removeCombined : false
+          removeCombined : true
           optimize: 'none'
 
       css:
