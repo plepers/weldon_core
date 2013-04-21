@@ -1,0 +1,46 @@
+{
+  "name": "core",
+  "description": "testing chaplin with grunt",
+  "version": "0.0.1",
+  "homepage": "https://github.com/plepers/grunt-chaplin-test",
+  "author": {
+    "name": "pierre lepers",
+    "email": "pierre.lepers@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/plepers/grunt-chaplin-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/plepers/grunt-chaplin-test/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/plepers/grunt-chaplin-test/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": "0.8.x"
+  },
+  "devDependencies": {
+    "grunt": "0.4.x",
+    "grunt-contrib-clean": "0.4.0rc6",
+    "grunt-contrib-copy": "0.4.0rc7",
+    "grunt-contrib-connect": "0.1.1rc6",
+    "grunt-contrib-watch": "0.2.0rc7",
+    "grunt-requirejs": "0.3.x",
+    "grunt-contrib-mincss": "0.4.0rc7",
+    "grunt-contrib-htmlmin": "0.1.1rc7",
+    "grunt-bower-task": "0.1.x",
+    "grunt-urequire": "git://github.com/aearly/grunt-urequire.git",
+    "lodash": "0.10.x",
+    "connect-url-rewrite": "0.1.x",
+    "grunt-contrib-coffee": "0.4.0rc7",
+    "grunt-coffeelint": "git://github.com/vojtajina/grunt-coffeelint.git",
+    "grunt-contrib-handlebars": "git://github.com/concordusapps/grunt-contrib-handlebars.git",
+    "grunt-contrib-stylus": "0.4.0rc7",
+    "grunt-contrib-jade": "~0.5.0"
+  },
+  "keywords": []
+}

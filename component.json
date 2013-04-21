@@ -1,0 +1,47 @@
+{
+  "name": "core",
+  "version": "0.0.1",
+  "main":"build/core.js",
+  "dependencies": {
+    "jquery": "1.8.x",
+    "underscore": "1.4.x",
+    "backbone": "https://github.com/plepers/backbone.git#1.0.0",
+    "requirejs": "2.1.x",
+    "almond": "0.2.x",
+    "chaplin": "0.8.x",
+    "handlebars": "1.0.x",
+    "bootstrap": "2.2.x",
+    "jquery-pjax": "1.6.x"
+  },
+  "exportsOverride": {
+    "jquery": {
+      "scripts": "jquery.js"
+    },
+    "jquery-pjax": {
+      "scripts": "jquery.pjax.js"
+    },
+    "almond": {
+      "scripts": "almond.js"
+    },
+    "backbone": {
+      "scripts": "backbone.js"
+    },
+    "requirejs": {
+      "scripts": "require.js"
+    },
+    "underscore": {
+      "scripts": "underscore.js"
+    },
+    "chaplin": {
+      "scripts": "amd/chaplin.js"
+    },
+    "handlebars": {
+      "scripts": "handlebars.runtime.js"
+    },
+    "bootstrap": {
+      "styles": "docs/assets/css/bootstrap*.css",
+      "scripts": "js/*.js",
+      "images": "img/glyphicons-*.png"
+    }
+  }
+}
