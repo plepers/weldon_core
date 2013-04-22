@@ -12,6 +12,7 @@
     "handlebars": "1.0.x",
     "bootstrap": "2.2.x",
     "jquery-pjax": "1.6.x"
+
   },
   "exportsOverride": {
     "jquery": {
@@ -33,7 +34,7 @@
       "scripts": "underscore.js"
     },
     "chaplin": {
-      "scripts": "amd/chaplin.js"
+      "scripts": "build/amd/chaplin.js"
     },
     "handlebars": {
       "scripts": "handlebars.runtime.js"
