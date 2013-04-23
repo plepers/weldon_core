@@ -25,7 +25,7 @@ return module.exports;
 define('core/view-helper',['require', 'exports', 'module', 'handlebars', 'chaplin'], 
   function (require, exports, module) {
   // uRequire: start body of original nodejs module
-var Chaplin, Handlebars, __slice = [].slice;
+var Chaplin, Handlebars, find, __slice = [].slice;
 
 Handlebars = require("handlebars");
 
@@ -37,11 +37,10 @@ Handlebars.registerHelper("url", function() {
     return Chaplin.helpers.reverse(routeName, params);
 });
 
-Handlebars.registerHelper("get", function() {
+find = function() {
     var chain, model, name, params, path, _i, _len;
-    path = arguments[0], params = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
+    model = arguments[0], path = arguments[1], params = 3 <= arguments.length ? __slice.call(arguments, 2) : [];
     chain = path.split("/");
-    model = this;
     for (_i = 0, _len = chain.length; _i < _len; _i++) {
         name = chain[_i];
         model = model.get(name);
@@ -49,7 +48,43 @@ Handlebars.registerHelper("get", function() {
             return null;
         }
     }
-    return model.toString.apply(model, params);
+    return model;
+};
+
+Handlebars.registerHelper("get", function() {
+    var params, path, _ref;
+    path = arguments[0], params = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
+    return (_ref = find(this, path)).toString.apply(_ref, params);
+});
+
+Handlebars.registerHelper("toString", function() {
+    var params, path;
+    path = arguments[0], params = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
+    return this.toString.apply(this, params);
+});
+
+Handlebars.registerHelper("clist", function(path, options) {
+    var context, data, fn, i, inverse, l, ret, _i;
+    fn = options.fn;
+    inverse = options.inverse;
+    ret = "";
+    context = find(this, path);
+    if (options.data) {
+        data = Handlebars.createFrame(options.data);
+    }
+    l = context.models.length - 1;
+    for (i = _i = 0; _i <= l; i = _i += 1) {
+        if (data) {
+            data.index = i;
+        }
+        ret = ret + fn(context.at(i), {
+            data: data
+        });
+    }
+    if (i === 0) {
+        ret = inverse(this);
+    }
+    return ret;
 });
 // uRequire: end body of original nodejs module
 
